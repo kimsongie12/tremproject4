@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="안녕하세요.\n여기는 마음이 편안해지는 공간 DIFY입니다.\n사용설명을 알려드리겠습니다."
+        android:text="안녕하세요.\n여기는 마음이 편안해지는 공간 DIFY입니다."
         android:textSize="20sp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/imageView"

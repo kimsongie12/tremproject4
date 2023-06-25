@@ -29,6 +29,21 @@
         <activity
             android:name=".Plan"
             android:label="Plan 액티비티" />
+        <activity
+            android:name=".Oneday"
+            android:label="Oneday 액티비티" />
+        <activity
+            android:name=".Oneyear"
+            android:label="Oneyear 액티비티" />
+        <activity
+            android:name=".Diaryone"
+            android:label="Diaryone 액티비티" />
+        <activity
+            android:name=".Cal"
+            android:label="CalActivity" />
+
+
+
 
 
 

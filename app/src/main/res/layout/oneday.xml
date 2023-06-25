@@ -5,15 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="목표를 설정해보세요"
+        android:text="하루 목표 작성"
         android:textSize="18sp"
         android:textStyle="bold"
         android:gravity="center" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/editTextMemo"
@@ -21,13 +26,13 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
-        android:hint="Write your memo here"
+        android:hint="메모를 작성하세요"
         android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="저장" />
 
 </LinearLayout>

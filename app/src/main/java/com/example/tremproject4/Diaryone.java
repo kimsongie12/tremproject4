@@ -3,34 +3,35 @@ package com.example.tremproject4;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
-public class Oneday extends AppCompatActivity {
+public class Diaryone extends AppCompatActivity {
 
-    private DatePicker datePicker;
     private EditText editTextMemo;
     private Button buttonSave;
-
-    private Calendar selectedDate;
+    private TextView textViewDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.oneday);
+        setContentView(R.layout.diaryone);
 
-        datePicker = findViewById(R.id.datePicker);
+
+
         editTextMemo = findViewById(R.id.editTextMemo);
         buttonSave = findViewById(R.id.buttonSave);
+        textViewDate = findViewById(R.id.textViewDate);
 
-        // 현재 날짜로 DatePicker 초기화
-        selectedDate = Calendar.getInstance();
-        datePicker.init(selectedDate.get(Calendar.YEAR), selectedDate.get(Calendar.MONTH), selectedDate.get(Calendar.DAY_OF_MONTH), null);
+        // 현재 날짜를 상단에 표시합니다.
+        setCurrentDate();
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,25 +41,24 @@ public class Oneday extends AppCompatActivity {
         });
     }
 
-    private void saveMemo() {
-        // 선택한 날짜 가져오기
-        int year = datePicker.getYear();
-        int month = datePicker.getMonth();
-        int day = datePicker.getDayOfMonth();
+    private void setCurrentDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy년 MM월 dd일", Locale.getDefault());
+        String currentDate = dateFormat.format(Calendar.getInstance().getTime());
+        textViewDate.setText(currentDate);
+    }
 
-        // 선택한 메모 가져오기
+    private void saveMemo() {
         String memo = editTextMemo.getText().toString().trim();
 
         if (!memo.isEmpty()) {
             // 여기에 저장 작업을 수행합니다.
-            // 예를 들어, 메모와 선택한 날짜를 데이터베이스나 파일에 저장할 수 있습니다.
+            // 예를 들어, 메모를 데이터베이스나 파일에 저장할 수 있습니다.
 
-            String date = year + "년 " + (month + 1) + "월 " + day + "일";
-            String message = "날짜: " + date + "\n메모: " + memo;
-
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "메모가 저장되었습니다!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "메모를 입력해주세요", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }

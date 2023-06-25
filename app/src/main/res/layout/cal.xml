@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 달력 -->
+    <TextView
+        android:id="@+id/textViewCalendarTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="달력"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="#FFCDC5" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCalendarTitle"
+        android:padding="16dp" />
+
+    <!-- 체크리스트 -->
+    <TextView
+        android:id="@+id/textViewChecklistTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calendarView"
+        android:text="체크리스트"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:background="#FFCDC5" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewChecklistTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 체크리스트 항목을 여기에 추가하세요 -->
+            <CheckBox
+                android:id="@+id/checkBoxItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="항목 1" />
+
+            <CheckBox
+                android:id="@+id/checkBoxItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="항목 2" />
+
+            <!-- 필요한 만큼 체크리스트 항목을 추가하세요 -->
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
